@@ -1,6 +1,6 @@
 package telran.college.dto;
 
-public interface StudentMark {
+public interface NameScore {
     String getName();
    int getScore();
 }
