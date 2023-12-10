@@ -18,4 +18,7 @@ List<String> findBestStudentsSubjectType(String type, int nStudents);
 	@Query(value="SELECT st.name as name, round(avg(score)) as score " + 
 JOIN_STUDENTS_MARKS + "group by st.name order by avg(score) desc", nativeQuery=true)
 	List<StudentMark> studentsMarks();
+	
+	 @Query("SELECT s FROM Student s WHERE s.id IN (SELECT m.student.id FROM Mark m GROUP BY m.student.id HAVING SUM(m.score) < :scoreThreshold)")
+	    List<Student> findStudentsWithLessThanTotalScore(long scoreThreshold);
 }

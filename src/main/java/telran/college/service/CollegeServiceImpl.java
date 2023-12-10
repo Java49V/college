@@ -10,10 +10,10 @@ import telran.college.repo.*;
 @Service
 @RequiredArgsConstructor
 public class CollegeServiceImpl implements CollegeService {
-	final StudentRepo studentRepo = null;
-	final LecturerRepo lecturerRepo = null;
-	final SubjectRepo subjectRepo = null;
-	final MarkRepo markRepo = null;
+	final StudentRepo studentRepo;
+	final LecturerRepo lecturerRepo;
+	final SubjectRepo subjectRepo;
+	final MarkRepo markRepo;
 	@Override
 	public List<String> bestStudentsSubjectType(String type, int nStudents) {
 		
