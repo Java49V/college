@@ -10,7 +10,7 @@ public interface CollegeService {
 	List<LecturerHours> lecturersMostHours(int nLecturers);
 	List<StudentCity> studentsScoresLess(int nThreshold);
 	List<NamePhone> studentsBurnMonth(int month);
-	List<NamePhone> lecturersCity(String city);
-	List<NameScore> subjectsScores(String studentName);
+	List<NamePhone> lecturersCity(String city); 
+	List<SubjectNameScore> subjectsScores(String studentName);
 	
 }
