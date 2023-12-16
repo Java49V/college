@@ -62,12 +62,18 @@ public class CollegeServiceImpl implements CollegeService {
 		studentRepo.save(new Student(personDto));
 		return personDto;
 	}
+	
 	@Override
 	@Transactional(readOnly = false)
 	public PersonDto addLecturer(PersonDto personDto) {
-		// TODO Auto-generated method stub
-		return null;
+	    if(lecturerRepo.existsById(personDto.id())) {
+	        throw new IllegalStateException(personDto.id() + " already exists");
+	    }
+	    Lecturer lecturer = new Lecturer(personDto);
+	    lecturerRepo.save(lecturer);
+	    return personDto;
 	}
+	
 	@Override
 	@Transactional(readOnly = false)
 	public SubjectDto addSubject(SubjectDto subjectDto) {
